@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import and Display Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>STEP:1</h2>
+        <input type="file" id="fileInput" accept=".json">
+        <h3>(Only supports JSON file)</h3>
+        
+        
+    </div>
+    <div class="container">
+        <div class="step2">
+            <h2>STEP:2</h2>
+        <label for="format">Format:</label>
+        <select id="format" name="format">
+            <option value="json">JSON</option>
+            <option value="csv">CSV</option>
+        </select>
+        <br>
+        <label for="fileType">File Type:</label>
+        <select id="fileType" name="fileType">
+            <option value="json">JSON</option>
+            <option value="csv">CSV</option>
+        </select>
+        <br>
+        <label for="encoding">Character Encoding:</label>
+        <select id="encoding" name="encoding">
+            <option value="utf-8">UTF-8</option>
+            <option value="utf-16">UTF-16</option>
+            <!-- Add more encoding options as needed -->
+        </select>
+        <br>
+        <label for="delimiter">Delimiter:</label>
+        <input type="text" id="delimiter" name="delimiter" placeholder="e.g., ,">
+        <br>
+        <label for="hasHeader">Has Header:</label>
+        <input type="checkbox" id="hasHeader" name="hasHeader">
+
+        <button onclick="importData()">Import Data</button>
+        </div>
+        
+    </div>
+    <div class="container">
+        <h2>STEP:3</h2>
+        <div class="columns-container">
+            <select id="availableFields" multiple></select>
+            <div class="controls">
+                <button onclick="addSelected()">>></button>
+                <button onclick="removeSelected()">&lt;&lt;</button>
+            </div>
+            <select id="displayedFields" multiple></select>
+        </div>
+
+        <table id="dataTable">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
